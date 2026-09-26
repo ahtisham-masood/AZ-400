@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: gymweb 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gymweb
+  template:
+    metadata:
+      labels:
+        app: gymweb 
+    spec:
+      containers:
+        - name: gymweb 
+          image: azuredeployment.azurecr.io/gymweb
+          ports:
+          - containerPort: 80
